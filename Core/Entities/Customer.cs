@@ -1,6 +1,6 @@
 ﻿namespace Core.Entities;
 
-public class Customers
+public class Customer
 {
     public string Id { get; set; }
     public required string Name { get; set; }
