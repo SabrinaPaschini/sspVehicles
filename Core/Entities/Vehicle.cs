@@ -1,6 +1,6 @@
 ﻿namespace Core.Entities;
 
-public class Vehicles
+public class Vehicle
 {
     public int Id { get; set; }
     public required string Model { get; set; }
