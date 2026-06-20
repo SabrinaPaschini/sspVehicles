@@ -2,7 +2,8 @@
 
 public class Provider
 {
-    public int Id { get; set; }
+    public int ProviderId { get; set; }
+
     public required string Name { get; set; }
     public string Email { get; set; }
     public string Phone { get; set; }
@@ -11,4 +12,7 @@ public class Provider
     public string State { get; set; }
     public string Zip { get; set; }
     public string Country { get; set; }
+
+    // 1 Provider → muitas Sales
+    public ICollection<Sale> Sales { get; set; } = new List<Sale>();
 }

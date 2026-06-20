@@ -2,10 +2,12 @@
 
 public class Sale
 {
-    public int Id { get; set; }
-    public int providerId { get; set; }
-    public int customersId { get; set; }
+    public int SaleId { get; set; }
+    public int ProviderId { get; set; }
+    public int CustomerId { get; set; }
     public decimal Total { get; set; }
-    public string productSale { get; set; }
+    public string ProductSale { get; set; }
+    public Provider Provider { get; set; }
+    public Customer Customer { get; set; }
     
 }
