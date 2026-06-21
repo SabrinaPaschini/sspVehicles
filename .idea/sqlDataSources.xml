@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="c29a4b75-b3ed-4898-9873-259636aaaa3c" name="sspVehicles@localhost Mapping">
+      <data-sources db="2694e987-fcce-46fc-a586-66a88614dff4" />
+      <scope>
+        <node kind="database" qname="sspVehicles" />
+      </scope>
+    </mapping>
+  </component>
+</project>
