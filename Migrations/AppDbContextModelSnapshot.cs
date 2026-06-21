@@ -108,11 +108,16 @@ namespace sspVehicles.Migrations
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("VehicleId")
+                        .HasColumnType("int");
+
                     b.HasKey("SaleId");
 
                     b.HasIndex("CustomerId");
 
                     b.HasIndex("ProviderId");
+
+                    b.HasIndex("VehicleId");
 
                     b.ToTable("Sales");
                 });
@@ -193,9 +198,17 @@ namespace sspVehicles.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Core.Entities.Vehicle", "Vehicle")
+                        .WithMany()
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Customer");
 
                     b.Navigation("Provider");
+
+                    b.Navigation("Vehicle");
                 });
 
             modelBuilder.Entity("Core.Entities.Vehicle", b =>
