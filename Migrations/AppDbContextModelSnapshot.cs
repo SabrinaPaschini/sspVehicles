@@ -102,10 +102,6 @@ namespace sspVehicles.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ProductSale")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProviderId")
                         .HasColumnType("int");
 
@@ -150,17 +146,18 @@ namespace sspVehicles.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("VehicleStatusId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
                     b.HasKey("VehicleId");
+
+                    b.HasIndex("VehicleStatusId");
 
                     b.ToTable("Vehicles");
                 });
@@ -176,9 +173,6 @@ namespace sspVehicles.Migrations
                     b.Property<string>("StatusName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("VehicleId")
-                        .HasColumnType("int");
 
                     b.HasKey("VehicleStatusId");
 
@@ -202,6 +196,17 @@ namespace sspVehicles.Migrations
                     b.Navigation("Customer");
 
                     b.Navigation("Provider");
+                });
+
+            modelBuilder.Entity("Core.Entities.Vehicle", b =>
+                {
+                    b.HasOne("Core.Entities.VehicleStatus", "VehicleStatus")
+                        .WithMany()
+                        .HasForeignKey("VehicleStatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("VehicleStatus");
                 });
 
             modelBuilder.Entity("Core.Entities.Provider", b =>
