@@ -1,5 +1,4 @@
-﻿namespace DefaultNamespace;
-
+﻿namespace SSP.Vehicles.Web.Models;
 public class Vehicle
 {
     public int VehicleId { get; set; }
