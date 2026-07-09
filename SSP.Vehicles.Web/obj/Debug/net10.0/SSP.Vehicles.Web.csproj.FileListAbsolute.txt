@@ -56,9 +56,7 @@ C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\rjsm
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\scopedcss\bundle\SSP.Vehicles.Web.styles.css
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\scopedcss\projectbundle\SSP.Vehicles.Web.bundle.scp.css
-C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\compressed\6tidl4i06x-{0}-iveumky1qe-iveumky1qe.gz
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\compressed\nxr7n5x7g4-{0}-61n19gt1b8-61n19gt1b8.gz
-C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\compressed\d084x6nsrf-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\compressed\9y57xye1q5-{0}-bqjiyaj88i-bqjiyaj88i.gz
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\compressed\1slr0g2tyy-{0}-c2jlpeoesf-c2jlpeoesf.gz
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\compressed\9z81i2lvnf-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -131,3 +129,5 @@ C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\refi
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\SSP.Vehicles.Web.pdb
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\SSP.Vehicles.Web.genruntimeconfig.cache
 C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\ref\SSP.Vehicles.Web.dll
+C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\compressed\d084x6nsrf-{0}-z7s3owm2md-z7s3owm2md.gz
+C:\Users\sabri\RiderProjects\sspVehicles\SSP.Vehicles.Web\obj\Debug\net10.0\compressed\6tidl4i06x-{0}-b9sayid5wm-b9sayid5wm.gz
