@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SSP.Vehicles.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0df601c5f91682bb7ea9daffd04072c9e92b5bb3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+daf9c13fd879f628a2e48548dff706b5a224abd3")]
 [assembly: System.Reflection.AssemblyProductAttribute("SSP.Vehicles.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SSP.Vehicles.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

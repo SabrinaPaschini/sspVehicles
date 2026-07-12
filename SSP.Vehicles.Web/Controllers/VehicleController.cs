@@ -6,11 +6,11 @@ namespace SSP.Vehicles.Web.Controllers;
 
 public class VehiclesController : Controller
 {
-    private readonly IVehicleRepository _vehicleRepository;
+    private readonly IVehicleRepository _vehicleRepository; // injecao de dependencia 
 
     public VehiclesController(IVehicleRepository vehicleRepository)
     {
-        _vehicleRepository = vehicleRepository;
+        _vehicleRepository = vehicleRepository; 
     }
 
 

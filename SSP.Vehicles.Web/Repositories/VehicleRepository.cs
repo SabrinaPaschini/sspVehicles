@@ -14,15 +14,28 @@ public class VehicleRepository : IVehicleRepository
         _context = context;
     }
 
-
     public int Add(Vehicle vehicle)
     {
-        using var context = _context.CreateConnection();
+        using var connection = _context.CreateConnection();
 
-        return context.QuerySingle<int>(
+        var parameters = new
+        {
+            vehicle.Year,
+            vehicle.Automaker,
+            vehicle.Price,
+            vehicle.VehicleStatusId,
+            vehicle.FipeCode,
+            vehicle.FipeFuel,
+            vehicle.FipeModel,
+            vehicle.Color
+        };
+
+        var id = connection.QuerySingle<int>(
             "SP_ADD_Vehicle",
-            vehicle,
+            parameters,
             commandType: CommandType.StoredProcedure
         );
+
+        return id;
     }
 }

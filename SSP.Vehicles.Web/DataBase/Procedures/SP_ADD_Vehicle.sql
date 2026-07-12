@@ -35,5 +35,5 @@ AS BEGIN
     @FipeModel,
     @Color
     );    
-    SELECT SCOPE_IDENTITY() AS VehicleId;
+    SELECT CAST (SCOPE_IDENTITY() AS INT) AS VehicleId;
 END;    
