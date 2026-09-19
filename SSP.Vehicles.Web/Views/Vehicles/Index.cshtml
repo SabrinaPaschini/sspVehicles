@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SSP.Vehicles.Web.Models.Vehicle>
+
+<h1>Veículos em Estoque</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Marca</th>
+        <th>Código FIPE</th>
+        <th>Preço</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var vehicle in Model)
+    {
+        <tr>
+            <td>@vehicle.VehicleId</td>  
+            <td>@vehicle.Automaker</td>
+            <td>@vehicle.FipeCode</td>
+            <td>@vehicle.Price</td>
+        </tr>
+    }
+   
+    </tbody>
+</table>
