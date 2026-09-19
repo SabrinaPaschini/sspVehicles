@@ -1,0 +1,11 @@
+﻿# Arquivos gerados pela compilação .NET
+**/bin/
+**/obj/
+
+# Configurações locais do Rider/JetBrains
+.idea/
+
+# Arquivos locais do Visual Studio
+.vs/
+*.user
+*.suo
