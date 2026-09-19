@@ -20,6 +20,12 @@ public class VehiclesController : Controller
         return View();
     }
 
+    [HttpGet]
+    public IActionResult Index()
+    {
+        var vehicles = _vehicleRepository.GetAll();
+        return View(vehicles);
+    }
 
     [HttpPost]
     public IActionResult Create(Vehicle vehicle)
@@ -31,6 +37,6 @@ public class VehiclesController : Controller
 
         var id = _vehicleRepository.Add(vehicle);
 
-        return RedirectToAction(nameof(Create));
+        return RedirectToAction(nameof(Index));
     }
 }

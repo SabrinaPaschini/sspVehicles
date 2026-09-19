@@ -38,4 +38,15 @@ public class VehicleRepository : IVehicleRepository
 
         return id;
     }
+
+    public IEnumerable<Vehicle> GetAll()
+    {
+        using var connection = _context.CreateConnection();
+        var vehicles = connection.Query<Vehicle>
+        (
+            "SP_LST_Vehicles",
+            commandType: CommandType.StoredProcedure
+        );
+        return vehicles;
+    }
 }

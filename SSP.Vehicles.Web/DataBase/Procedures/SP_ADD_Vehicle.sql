@@ -11,7 +11,6 @@
     @Color VARCHAR(20)
 )
 AS BEGIN
-    SET NOCOUNT ON;
     
     INSERT INTO Vehicles
     (
