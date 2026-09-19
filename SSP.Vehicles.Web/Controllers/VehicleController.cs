@@ -31,6 +31,6 @@ public class VehiclesController : Controller
 
         var id = _vehicleRepository.Add(vehicle);
 
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Create));
     }
 }
