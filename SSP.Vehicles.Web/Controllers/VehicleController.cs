@@ -39,4 +39,17 @@ public class VehiclesController : Controller
 
         return RedirectToAction(nameof(Index));
     }
+
+    [HttpGet]
+    public IActionResult Edit(int id)
+    {
+        var vehicle = _vehicleRepository.GetVehicleById(id);
+
+		if (vehicle is null )
+	{
+		return NotFound();
+	}
+        return View(vehicle);
+    }
+
 }

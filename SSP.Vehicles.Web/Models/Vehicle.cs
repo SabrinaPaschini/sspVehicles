@@ -5,9 +5,11 @@ public class Vehicle
     public int Year { get; set; }
     public string Automaker { get; set; }
     public decimal Price { get; set; }
-    public int VehicleStatusId { get; set; }
+    public int? VehicleStatusId { get; set; }
     public string FipeCode { get; set; }
     public string FipeFuel { get; set; }
     public string FipeModel { get; set; }
     public string Color { get; set; }
+	public DateTime? CreatedAt { get; set; }
+	public string? LicensePlate { get; set; }
 }
