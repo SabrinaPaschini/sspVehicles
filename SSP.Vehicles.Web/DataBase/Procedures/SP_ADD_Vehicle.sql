@@ -10,7 +10,8 @@
     @FipeModel VARCHAR(50),
     @Color VARCHAR(20)
 )
-AS BEGIN
+AS 
+BEGIN
     
     INSERT INTO Vehicles
     (
