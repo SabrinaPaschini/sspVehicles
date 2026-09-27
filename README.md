@@ -27,8 +27,8 @@ O sistema permitirá o gerenciamento de fornecedores, veículos, estoque e venda
 
 ### Em desenvolvimento
 
-- Cadastro de fornecedores
 - Cadastro de veículos
+- Cadastro de fornecedores
 - Controle de estoque
 - Integração com a API FIPE
 
