@@ -27,7 +27,8 @@ public class VehicleRepository : IVehicleRepository
             vehicle.FipeCode,
             vehicle.FipeFuel,
             vehicle.FipeModel,
-            vehicle.Color
+            vehicle.Color, 
+			vehicle.LicensePlate
         };
 
         var id = connection.QuerySingle<int>(
@@ -42,11 +43,27 @@ public class VehicleRepository : IVehicleRepository
     public IEnumerable<Vehicle> GetAll()
     {
         using var connection = _context.CreateConnection();
-        var vehicles = connection.Query<Vehicle>
-        (
+
+        var vehicles = connection.Query<Vehicle>(
             "SP_LST_Vehicles",
             commandType: CommandType.StoredProcedure
         );
+
         return vehicles;
     }
+
+	public Vehicle? GetVehicleById(int id)
+	{
+		using var connection = _context.CreateConnection();
+
+		var vehicle = connection.QuerySingleOrDefault<Vehicle>(
+	    "SP_GET_VehicleById", 
+	    new {VehicleId = id },
+	    commandType: CommandType.StoredProcedure
+	);
+
+	return vehicle; 
 }
+}
+
+

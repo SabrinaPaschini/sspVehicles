@@ -5,7 +5,7 @@
 <table>
     <thead>
     <tr>
-        <th>ID</th>
+		<th>Placa</th>
         <th>Marca</th>
         <th>Código FIPE</th>
         <th>Preço</th>
@@ -15,7 +15,7 @@
     @foreach (var vehicle in Model)
     {
         <tr>
-            <td>@vehicle.VehicleId</td>  
+			<td>@vehicle.LicensePlate</td>
             <td>@vehicle.Automaker</td>
             <td>@vehicle.FipeCode</td>
             <td>@vehicle.Price</td>

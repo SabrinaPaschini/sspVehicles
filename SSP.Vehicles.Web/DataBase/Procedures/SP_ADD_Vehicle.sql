@@ -8,7 +8,8 @@
     @FipeCode VARCHAR(10),
     @FipeFuel VARCHAR(10),
     @FipeModel VARCHAR(50),
-    @Color VARCHAR(20)
+    @Color VARCHAR(20),
+    @LicensePlate VARCHAR(7)
 )
 AS 
 BEGIN
@@ -22,7 +23,8 @@ BEGIN
      FipeCode,
      FipeFuel,
      FipeModel,
-     Color
+     Color,
+     LicensePlate
     )
     VALUES 
     (
@@ -33,7 +35,8 @@ BEGIN
     @FipeCode,
     @FipeFuel,
     @FipeModel,
-    @Color
+    @Color,
+    @LicensePlate
     );    
     SELECT CAST (SCOPE_IDENTITY() AS INT) AS VehicleId;
 END;    

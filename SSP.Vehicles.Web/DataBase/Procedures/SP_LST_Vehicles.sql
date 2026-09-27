@@ -4,6 +4,7 @@
     
     SELECT 
         Vehicles.VehicleId,
+        Vehicles.LicensePlate,
         Vehicles.Automaker, 
         vehicles.FipeCode,
         vehicles.Price

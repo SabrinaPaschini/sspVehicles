@@ -1,0 +1,16 @@
+﻿@model SSP.Vehicles.Web.Models.Vehicle
+
+<form asp-action="Edit" method="post">
+    <input asp-for="VehicleId" type="hidden"/>
+    <input asp-for="Year" placeholder="Ano" /> 
+    <input asp-for="Automaker" placeholder="Marca" />
+    <input asp-for="Price" placeholder="55.000"/>
+    <input asp-for="VehicleStatusId" placeholder="1" />
+    <input asp-for="FipeCode" placeholder="023065-0" />
+    <input asp-for="FipeFuel" placeholder="Gasolina" />
+    <input asp-for="FipeModel" placeholder="Carro" />
+    <input asp-for="Color" placeholder="Cor" />
+    
+    <button type="submit">Salvar</button>
+    <a asp-action="Index">Cancelar</a>
+</form>
