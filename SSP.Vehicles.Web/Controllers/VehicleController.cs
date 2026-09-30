@@ -53,4 +53,23 @@ public class VehiclesController : Controller
     }
 
 // TODO: action que faz um post e recebe os dados do formulario 
+
+	[HttpPost] 
+	public IActionResult Edit(Vehicle vehicle)
+	{
+
+	 if (!ModelState.IsValid)
+        {
+            return View(vehicle);
+        }		
+	var affectedRows = _vehicleRepository.Update(vehicle);
+
+	if (affectedRows == 0)
+	{
+	
+		return NotFound();
+	
+	}	
+		return RedirectToAction(nameof(Index));
+	}
 }
