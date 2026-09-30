@@ -65,6 +65,26 @@ public class VehicleRepository : IVehicleRepository
 	return vehicle; 
 }
 // TODO: NOVA PROC UPD 
+    public int Update(Vehicle vehicle)
+    {
+        using var connection = _context.CreateConnection();
+
+        var parameters = new
+        {	
+			vehicle.VehicleId,
+            vehicle.Year,
+            vehicle.Automaker,
+            vehicle.Price,
+            vehicle.FipeCode,
+            vehicle.FipeFuel,
+            vehicle.FipeModel,
+            vehicle.Color, 
+			vehicle.LicensePlate
+        };
+
+        var affectedRows = connection.Execute("SP_UPD_Vehicle", parameters, commandType: CommandType.StoredProcedure);
+		return affectedRows;
+    }
 }
 
 

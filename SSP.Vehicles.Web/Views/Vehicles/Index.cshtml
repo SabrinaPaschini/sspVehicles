@@ -14,12 +14,17 @@
     <tbody>
     @foreach (var vehicle in Model)
     {
-        <tr>  <!-- TODO: LINK EDITAR EM CADA LINHA  -->
+        <tr>
+
 			<td>@vehicle.LicensePlate</td>
             <td>@vehicle.Automaker</td>
             <td>@vehicle.FipeCode</td>
             <td>@vehicle.Price</td>
+<td>
+    <a asp-action="Edit" asp-route-id="@vehicle.VehicleId">Editar </a>
+</td>
         </tr>
+
     }
    
     </tbody>

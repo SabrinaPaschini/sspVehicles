@@ -15,7 +15,8 @@ SELECT
     FipeCode,
     FipeFuel,
     FipeModel,
-    Color
+    Color,
+    LicensePlate
 FROM 
     Vehicles 
 WHERE 
