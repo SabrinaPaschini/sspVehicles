@@ -1,9 +1,10 @@
-﻿using Dapper;
-using System.Data;
+﻿using System.Data;
+using Dapper;
 using SSP.Vehicles.Web.Data;
 using SSP.Vehicles.Web.Models;
-
 using SSP.Vehicles.Web.Repositories.Interfaces;
+
+namespace SSP.Vehicles.Web.Repositories;
 
 public class VehicleRepository : IVehicleRepository
 {
@@ -28,7 +29,7 @@ public class VehicleRepository : IVehicleRepository
             vehicle.FipeFuel,
             vehicle.FipeModel,
             vehicle.Color, 
-			vehicle.LicensePlate
+            vehicle.LicensePlate
         };
 
         var id = connection.QuerySingle<int>(
@@ -36,6 +37,7 @@ public class VehicleRepository : IVehicleRepository
             parameters,
             commandType: CommandType.StoredProcedure
         );
+            
 
         return id;
     }
@@ -52,26 +54,26 @@ public class VehicleRepository : IVehicleRepository
         return vehicles;
     }
 
-	public Vehicle? GetVehicleById(int id)
-	{
-		using var connection = _context.CreateConnection();
+    public Vehicle? GetVehicleById(int id)
+    {
+        using var connection = _context.CreateConnection();
 
-		var vehicle = connection.QuerySingleOrDefault<Vehicle>(
-	    "SP_GET_VehicleById", 
-	    new {VehicleId = id },
-	    commandType: CommandType.StoredProcedure
-	);
+        var vehicle = connection.QuerySingleOrDefault<Vehicle>(
+            "SP_GET_VehicleById", 
+            new {VehicleId = id },
+            commandType: CommandType.StoredProcedure
+        );
 
-	return vehicle; 
-}
-// TODO: NOVA PROC UPD 
+        return vehicle; 
+    }
+    
     public int Update(Vehicle vehicle)
     {
         using var connection = _context.CreateConnection();
 
         var parameters = new
         {	
-			vehicle.VehicleId,
+            vehicle.VehicleId,
             vehicle.Year,
             vehicle.Automaker,
             vehicle.Price,
@@ -79,12 +81,27 @@ public class VehicleRepository : IVehicleRepository
             vehicle.FipeFuel,
             vehicle.FipeModel,
             vehicle.Color, 
-			vehicle.LicensePlate
+            vehicle.LicensePlate
         };
 
         var affectedRows = connection.Execute("SP_UPD_Vehicle", parameters, commandType: CommandType.StoredProcedure);
-		return affectedRows;
+        return affectedRows;
+    }
+
+    public int Delete(Vehicle vehicle)
+    {
+        using var connection = _context.CreateConnection();
+
+        var parameters = new
+        {
+            vehicle.VehicleId
+        };
+
+        var rowsAffected = connection.Execute(
+            "SP_DEL_Vehicle",
+            parameters,
+            commandType: CommandType.StoredProcedure
+        );
+        return rowsAffected;
     }
 }
-
-
