@@ -15,7 +15,6 @@
     @foreach (var vehicle in Model)
     {
         <tr>
-
 			<td>@vehicle.LicensePlate</td>
             <td>@vehicle.Automaker</td>
             <td>@vehicle.FipeCode</td>
@@ -27,8 +26,6 @@
                 <a asp-action="Delete" asp-route-id="@vehicle.VehicleId">Excluir</a>
             </td>
         </tr>
-
     }
-   
     </tbody>
 </table>
