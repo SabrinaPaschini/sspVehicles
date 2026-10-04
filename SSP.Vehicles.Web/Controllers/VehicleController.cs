@@ -10,7 +10,7 @@ public class VehiclesController : Controller
 
     public VehiclesController(IVehicleRepository vehicleRepository)
     {
-        _vehicleRepository = vehicleRepository; 
+        _vehicleRepository = vehicleRepository;
     }
 
 
@@ -45,31 +45,62 @@ public class VehiclesController : Controller
     {
         var vehicle = _vehicleRepository.GetVehicleById(id);
 
-		if (vehicle is null )
-	{
-		return NotFound();
-	}
+        if (vehicle is null)
+        {
+            return NotFound();
+        }
+
         return View(vehicle);
     }
 
-// TODO: action que faz um post e recebe os dados do formulario 
-
-	[HttpPost] 
-	public IActionResult Edit(Vehicle vehicle)
-	{
-
-	 if (!ModelState.IsValid)
+    [HttpPost]
+    public IActionResult Edit(Vehicle vehicle)
+    {
+        if (!ModelState.IsValid)
         {
             return View(vehicle);
-        }		
-	var affectedRows = _vehicleRepository.Update(vehicle);
+        }
 
-	if (affectedRows == 0)
-	{
-	
-		return NotFound();
-	
-	}	
-		return RedirectToAction(nameof(Index));
-	}
+        var affectedRows = _vehicleRepository.Update(vehicle);
+
+        if (affectedRows == 0)
+        {
+            return NotFound();
+        }
+
+        return RedirectToAction(nameof(Index));
+    }
+
+    [HttpGet]
+    public IActionResult Delete(int id)
+    {
+        var vehicle = _vehicleRepository.GetVehicleById(id);
+
+        if (vehicle is null)
+        {
+            return NotFound();
+        }
+
+        return View(vehicle);
+    }
+
+    [HttpPost]
+    public IActionResult Delete(Vehicle vehicle)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(vehicle);
+        }
+
+        var affectedRows = _vehicleRepository.Delete(vehicle);
+
+        if (affectedRows == 0)
+        {
+            return NotFound();
+        }
+
+        return RedirectToAction(nameof(Index));
+    }
+    
+    
 }

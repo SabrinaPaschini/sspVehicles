@@ -1,0 +1,18 @@
+﻿@model SSP.Vehicles.Web.Models.Vehicle
+
+<form asp-action="Delete" method="post">
+    <input asp-for="VehicleId" type="hidden"/>
+    <input readonly="readonly" asp-for="Year" placeholder="Ano" /> 
+    <input readonly="readonly" asp-for="Automaker" placeholder="Marca" />
+    <input readonly="readonly" asp-for="Price" placeholder="55.000"/>
+    <input readonly="readonly" asp-for="VehicleStatusId" placeholder="1" />
+    <input readonly="readonly" asp-for="FipeCode" placeholder="023065-0" />
+    <input readonly="readonly" asp-for="FipeFuel" placeholder="Gasolina" />
+    <input readonly="readonly" asp-for="FipeModel" placeholder="Carro" />
+    <input readonly="readonly" asp-for="Color" placeholder="Cor" />
+    <input readonly="readonly" asp-for="LicensePlate" placeholder="ABC123" />
+    
+    
+    <button type="submit">Excluir</button>
+    <a asp-action="Index">Cancelar</a>
+</form>
