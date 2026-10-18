@@ -13,7 +13,6 @@
 )
 AS 
 BEGIN
-    
     INSERT INTO Vehicles
     (
      Year, 
