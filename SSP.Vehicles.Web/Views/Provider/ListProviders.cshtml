@@ -1,0 +1,21 @@
+﻿@model IEnumerable<SSP.Vehicles.Web.Models.Provider>
+
+<h1>Fornecedores</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Fornecedor:</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var provider in Model)
+    {
+        <tr>
+            <td>@provider.Name</td>
+            <td>@provider.Email</td>
+            <td>@provider.Address</td>
+        </tr>
+    }
+    </tbody>
+</table>
