@@ -59,8 +59,8 @@ SSP.Vehicles
 
 - [x] Estrutura inicial
 - [x] Banco de dados
+- [x] CRUD de veículos
 - [ ] CRUD de fornecedores
-- [ ] CRUD de veículos
 - [ ] Integração com a API FIPE
 - [ ] Cadastro de clientes
 - [ ] Registro de vendas
