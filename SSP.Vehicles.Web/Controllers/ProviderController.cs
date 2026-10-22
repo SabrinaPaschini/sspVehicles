@@ -17,21 +17,20 @@ public class ProviderController : Controller
     [HttpPost]
     public IActionResult Add(Provider provider)
     {
-        if (!ModelState.IsValid)
-        {
-            return Index();
-        }
-        var providerId = _providerRepository.Add(provider);
+       
         
-        return RedirectToAction(nameof(Index));
+        return View("AddProviders");
     }
 
     [HttpGet]
-    public IActionResult AddProvider()
+    public IActionResult AddProviders(Provider provider)
     {
-        Provider provider = null;
-        var  providerId = _providerRepository.Add(provider);
-        return RedirectToAction(nameof(Index));
+        if (!ModelState.IsValid)
+        {
+            return View(provider);
+        }
+        var id = _providerRepository.Add(provider);     
+        return RedirectToAction("ListProviders", id);
     }
     
     [HttpGet]

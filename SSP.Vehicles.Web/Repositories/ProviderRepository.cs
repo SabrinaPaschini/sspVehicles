@@ -30,10 +30,11 @@ public class ProviderRepository : IProviderRepository
             provider.Zip,
             provider.Country
         };
-        var id = connection.ExecuteScalar<int>(
+        
+        var id = connection.QuerySingle<int>(
             "SP_ADD_Provider",
             parameters,
-            commandType:CommandType.StoredProcedure
+            commandType: CommandType.StoredProcedure
         );
         return id;
     }
@@ -41,7 +42,6 @@ public class ProviderRepository : IProviderRepository
     public List<Provider> GetAll()
     {
         using var connection = _context.CreateConnection();
-        
         
         var providers = connection.Query<Provider>(
             "SP_LST_Provider",
