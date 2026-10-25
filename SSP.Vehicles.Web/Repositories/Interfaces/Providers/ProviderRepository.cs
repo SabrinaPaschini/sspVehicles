@@ -89,4 +89,22 @@ public class ProviderRepository : IProviderRepository
         );
         return provider;
     }
+
+    public int DeleteProvider(Provider provider)
+    {
+        using var connection = _context.CreateConnection();
+
+        var parameters = new
+        {
+            provider.ProviderId,
+        };
+
+        var rowsAffected = connection.Execute(
+            "SP_DEL_Provider",
+            parameters,
+            commandType: CommandType.StoredProcedure
+        );
+
+        return rowsAffected;
+    } 
   }

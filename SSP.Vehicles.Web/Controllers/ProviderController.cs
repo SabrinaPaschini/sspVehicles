@@ -62,11 +62,41 @@ public class ProviderController : Controller
         }
         var affectedRows = _providerRepository.UpdateProvider(provider);
         
-        if (affectedRows < 0)
+        if (affectedRows == 0)
         {
             return NotFound();
         }    
         return RedirectToAction(nameof(ListProviders));
-        
     }
+
+    [HttpGet]
+    public IActionResult DeleteProvider(int id)
+    {
+        var providers = _providerRepository.GetProviderById(id);
+
+        if (providers is null)
+        {
+            return NotFound();
+        }
+        return View("DeleteProviders", providers);
+    }
+
+    [HttpPost]
+    public IActionResult DeleteProvider(Provider provider)
+    {
+        if (!ModelState.IsValid)
+        {
+            return(View("DeleteProvider", provider));
+        }
+        
+        var affectedRows = _providerRepository.DeleteProvider(provider);
+
+        if (affectedRows == 0)
+        {
+            return NotFound();
+        }
+        
+        return RedirectToAction(nameof(ListProviders));
+    }
+    
 }

@@ -1,0 +1,16 @@
+﻿@model SSP.Vehicles.Web.Models.Provider
+
+<form asp-action="DeleteProvider" method="post">
+    <input asp-for="ProviderId" type="hidden"/>
+    <input readonly="readonly" asp-for="Name" placeholder="Nome"/>        
+    <input readonly="readonly" asp-for="Email" placeholder="Email"/>      
+    <input readonly="readonly" asp-for="Phone" placeholder="(11)59885985">
+    <input readonly="readonly" asp-for="Address" placeholder="Endereço"/> 
+    <input readonly="readonly" asp-for="City" placeholder="Cidade" />     
+    <input readonly="readonly" asp-for="State" placeholder="Estado" />    
+    <input readonly="readonly" asp-for="Zip" placeholder="CEP" />         
+    <input readonly="readonly" asp-for="Country" placeholder="País" />
+    
+    <button type="submit">Excluir</button>
+    <a asp-action="ListProviders">Cancelar</a>
+</form>

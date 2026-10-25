@@ -8,4 +8,5 @@ public interface IProviderRepository
     List<Provider> GetAll();
     int UpdateProvider(Provider provider);
     Provider? GetProviderById(int id);
+    int DeleteProvider(Provider provider);
 }
