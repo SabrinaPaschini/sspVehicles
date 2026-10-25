@@ -15,20 +15,20 @@ public class VehiclesController : Controller
 
 
     [HttpGet]
-    public IActionResult Create()
+    public IActionResult AddVehicles()
     {
         return View();
     }
 
     [HttpGet]
-    public IActionResult Index()
+    public IActionResult ListVehicles()
     {
         var vehicles = _vehicleRepository.GetAll();
         return View(vehicles);
     }
 
     [HttpPost]
-    public IActionResult Create(Vehicle vehicle)
+    public IActionResult AddVehicles(Vehicle vehicle)
     {
         if (!ModelState.IsValid)
         {
@@ -37,11 +37,11 @@ public class VehiclesController : Controller
 
         var id = _vehicleRepository.Add(vehicle);
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(ListVehicles));
     }
 
     [HttpGet]
-    public IActionResult Edit(int id)
+    public IActionResult EditVehicles(int id)
     {
         var vehicle = _vehicleRepository.GetVehicleById(id);
 
@@ -54,7 +54,7 @@ public class VehiclesController : Controller
     }
 
     [HttpPost]
-    public IActionResult Edit(Vehicle vehicle)
+    public IActionResult EditVehicles(Vehicle vehicle)
     {
         if (!ModelState.IsValid)
         {
@@ -68,11 +68,11 @@ public class VehiclesController : Controller
             return NotFound();
         }
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(ListVehicles));
     }
 
     [HttpGet]
-    public IActionResult Delete(int id)
+    public IActionResult DeleteVehicles(int id)
     {
         var vehicle = _vehicleRepository.GetVehicleById(id);
 
@@ -85,7 +85,7 @@ public class VehiclesController : Controller
     }
 
     [HttpPost]
-    public IActionResult Delete(Vehicle vehicle)
+    public IActionResult DeleteVehicles(Vehicle vehicle)
     {
         if (!ModelState.IsValid)
         {
@@ -99,7 +99,7 @@ public class VehiclesController : Controller
             return NotFound();
         }
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(ListVehicles));
     }
     
     

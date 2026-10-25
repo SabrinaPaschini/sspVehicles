@@ -1,6 +1,6 @@
 ﻿@model SSP.Vehicles.Web.Models.Vehicle
 
-<form asp-action="Delete" method="post">
+<form asp-action="DeleteVehicles" method="post">
     <input asp-for="VehicleId" type="hidden"/>
     <input readonly="readonly" asp-for="Year" placeholder="Ano" /> 
     <input readonly="readonly" asp-for="Automaker" placeholder="Marca" />
@@ -14,5 +14,5 @@
     
     
     <button type="submit">Excluir</button>
-    <a asp-action="Index">Cancelar</a>
+    <a asp-action="ListVehicles">Cancelar</a>
 </form>
