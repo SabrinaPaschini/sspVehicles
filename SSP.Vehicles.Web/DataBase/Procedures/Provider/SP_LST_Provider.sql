@@ -2,6 +2,7 @@
       AS BEGIN    
       
 SELECT 
+   -- TODO 6: Retornar tambem ProviderId para montar o link de edicao de cada fornecedor.
    Providers.Name, 
    Providers.Email, 
    Providers.Address

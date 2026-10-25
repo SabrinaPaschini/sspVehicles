@@ -6,4 +6,6 @@ public interface IProviderRepository
 {
     int Add(Provider provider);
     List<Provider> GetAll();
+    int UpdateProvider(Provider provider);
+    Provider? GetProviderById(int id);
 }

@@ -20,7 +20,7 @@ SELECT
 FROM 
     Vehicles 
 WHERE 
-    Vehicles.vehicleID = @vehicleId
+    Vehicles.vehicleId = @vehicleId
 END;    
           
           
