@@ -15,7 +15,12 @@
             <td>@provider.Name</td>
             <td>@provider.Email</td>
             <td>@provider.Address</td>
-            @* TODO 6: Adicionar o link Editar para EditProvider, enviando o ProviderId da linha em asp-route-id. *@
+            <td>
+                <a asp-action="EditProvider" asp-route-id="@provider.ProviderId">Editar </a>
+            </td>
+            <td>
+                <a asp-action="DeleteProvider" asp-route-id="@provider.ProviderId">Excluir</a>
+            </td>
         </tr>
     }
     </tbody>

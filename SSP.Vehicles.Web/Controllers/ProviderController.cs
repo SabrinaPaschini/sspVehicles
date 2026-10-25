@@ -41,9 +41,7 @@ public class ProviderController : Controller
     }
 
     [HttpGet]
-    // TODO 3: Receber int id no GET e buscar o fornecedor pelo repository.
-    // GET e POST precisam de assinaturas C# distintas; mudar so o nome do parametro nao diferencia metodos.
-    public IActionResult EditProvider()
+    public IActionResult EditProvider(int id)
     {
         var providers = _providerRepository.GetProviderById(id);
 
@@ -51,27 +49,24 @@ public class ProviderController : Controller
         {
             return NotFound();
         }
-        
-        // TODO 3: Indicar a view EditProviders, pois seu arquivo tem nome diferente da action EditProvider.
-        return View(providers);
+
+        return View("EditProviders", providers);
         }
 
     [HttpPost]
     public IActionResult EditProvider(Provider provider)
     {
-        // TODO 4: Validar ModelState antes de salvar; se invalido, devolver EditProviders com o provider recebido.
-        // Validar tambem o token antifalsificacao enviado pelo formulario.
-        // TODO 4: Passar provider ao UpdateProvider; id nao existe neste metodo.
-        // Guardar o retorno em outra variavel: provider ja e o nome do parametro e o retorno e int.
-        var provider = _providerRepository.UpdateProvider(id);
-        
-        // TODO 4: Verificar a quantidade de linhas afetadas (zero), em vez de comparar com null.
-        if (provider == null)
+        if (!ModelState.IsValid)
         {
-            // TODO 4: Completar a instrucao abaixo com ponto e virgula.
-            return NotFound()
+            return View("EditProviders", provider);
         }
+        var affectedRows = _providerRepository.UpdateProvider(provider);
         
+        if (affectedRows < 0)
+        {
+            return NotFound();
+        }    
         return RedirectToAction(nameof(ListProviders));
+        
     }
 }
