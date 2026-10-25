@@ -7,7 +7,6 @@
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/SSP.Vehicles.Web.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -25,13 +24,14 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Vehicles" asp-action="ListVehicles">LST Veículos</a>
-                        </li>        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Provider" asp-action="Index">LST Fornecedores</a>
                         </li>   
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Provider" asp-action="AddProviders">ADD Fornecedores</a>
                         </li>   
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Provider" asp-action="ListProviders">LST Fornecedores</a>
+                        </li>   
+
                     </ul>
                 </div>
             </div>

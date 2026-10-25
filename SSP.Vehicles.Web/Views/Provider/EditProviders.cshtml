@@ -1,0 +1,17 @@
+﻿@model SSP.Vehicles.Web.Models.Provider
+
+@* TODO 6: Exibir os erros de validacao devolvidos pelo POST no formulario. *@
+<form asp-action="EditProvider" method="post">
+    <input asp-for="ProviderId" type="hidden">
+    <input asp-for="Name" placeholder="Nome">
+    <input asp-for="Email" placeholder="Email@Email.com">
+    <input asp-for="Phone" placeholder="(11) 9545-8554">
+    <input asp-for="Address" placeholder="Endereço">
+    <input asp-for="City" placeholder="Cidade">
+    <input asp-for="State" placeholder="Estado">
+    <input asp-for="Zip" placeholder="01359-950">
+    <input asp-for="Country" placeholder="País">
+    
+    <button type="submit">Salvar</button>
+    <a asp-action="ListProviders">Cancelar</a>
+</form>
