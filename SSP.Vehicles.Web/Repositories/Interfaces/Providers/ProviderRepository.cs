@@ -58,6 +58,7 @@ public class ProviderRepository : IProviderRepository
         
         var parameters = new
         {
+            provider.ProviderId,
             provider.Name,
             provider.Email,
             provider.Phone,
